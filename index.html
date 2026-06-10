@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -30,11 +30,12 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.6;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   img { max-width: 100%; display: block; }
@@ -72,9 +73,10 @@
     margin: 0 auto;
   }
   .brand {
-    font-family: 'Italiana', serif;
-    font-size: 22px;
-    letter-spacing: 0.18em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
   }
   .nav {
@@ -84,10 +86,11 @@
   .nav a {
     color: var(--ink);
     text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 0.18em;
+    font-size: 12px;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     transition: color 0.2s;
   }
   .nav a:hover { color: var(--gold); }
@@ -108,33 +111,34 @@
     align-items: center;
   }
   .hero-eyebrow {
-    font-family: 'Italiana', serif;
-    font-size: 13px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 12px;
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 24px;
   }
   .hero-title {
-    font-family: 'Italiana', serif;
-    font-weight: 400;
-    font-size: clamp(56px, 8vw, 110px);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: 1.05;
+    letter-spacing: 0.005em;
     margin-bottom: 28px;
   }
   .hero-title .amp {
     color: var(--gold);
     font-style: italic;
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-weight: 400;
   }
   .hero-sub {
-    font-size: 19px;
+    font-size: 17px;
     color: var(--ink-soft);
     max-width: 460px;
-    margin-bottom: 40px;
-    line-height: 1.55;
+    margin-bottom: 36px;
+    line-height: 1.6;
   }
   .hero-cta {
     display: inline-flex;
@@ -144,10 +148,11 @@
     background: var(--ink);
     color: var(--bg);
     text-decoration: none;
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 999px;
     transition: transform 0.25s ease, background 0.25s ease;
   }
@@ -158,6 +163,9 @@
   }
   .hero-cta svg { width: 16px; height: 16px; }
 
+  .hero-image {
+    position: relative;
+  }
   .hero-image-wrap {
     position: relative;
     aspect-ratio: 4 / 5;
@@ -180,23 +188,27 @@
   }
   .hero-badge {
     position: absolute;
-    bottom: -28px;
-    left: -28px;
+    bottom: -22px;
+    left: 24px;
     background: var(--bg);
-    padding: 18px 26px;
+    padding: 14px 22px;
     border-radius: 999px;
     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);
-    font-family: 'Italiana', serif;
-    font-size: 13px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 12px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
+    z-index: 2;
   }
   .hero-badge .dot {
     width: 6px; height: 6px; border-radius: 50%;
     background: var(--gold);
+    flex-shrink: 0;
   }
 
   .hero .swirl-tr {
@@ -210,20 +222,28 @@
   }
 
   @media (max-width: 860px) {
-    .hero { padding: 50px 0 80px; }
+    .hero { padding: 40px 0 70px; }
     .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-    .hero-image-wrap { max-width: 420px; margin: 0 auto; }
-    .hero-badge { left: 50%; transform: translateX(-50%); }
+    .hero-text { order: 1; text-align: center; }
+    .hero-text .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-image { order: 2; max-width: 420px; margin: 0 auto; width: 100%; }
+    .hero-badge { left: 50%; transform: translateX(-50%); bottom: -20px; }
+  }
+  @media (max-width: 480px) {
+    .hero-eyebrow { font-size: 11px; }
+    .hero-title { font-size: 44px; }
+    .hero-sub { font-size: 16px; }
   }
 
   /* ---------- Section base ---------- */
   section {
     position: relative;
-    padding: 110px 0;
+    padding: 100px 0;
   }
   .section-eyebrow {
-    font-family: 'Italiana', serif;
-    font-size: 13px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 12px;
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: var(--muted);
@@ -231,19 +251,24 @@
     margin-bottom: 18px;
   }
   .section-title {
-    font-family: 'Italiana', serif;
-    font-weight: 400;
-    font-size: clamp(46px, 6vw, 88px);
-    line-height: 1;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5.5vw, 76px);
+    line-height: 1.05;
     text-align: center;
-    letter-spacing: 0.02em;
-    margin-bottom: 70px;
+    letter-spacing: 0.01em;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 480px) {
+    section { padding: 70px 0; }
+    .section-title { margin-bottom: 45px; }
   }
 
   /* ---------- ABOUT ---------- */
   .about {
     background: var(--bg);
     overflow: hidden;
+    padding: 90px 0 100px;
   }
   .about .swirl-top {
     top: -40px; left: 50%;
@@ -251,48 +276,41 @@
     transform: translateX(-50%);
     opacity: 0.55;
   }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 80px;
-    align-items: center;
+  .about-text-only {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
     position: relative;
     z-index: 1;
-  }
-  .about-text {
-    font-size: 22px;
-    line-height: 1.55;
+    font-size: 19px;
+    line-height: 1.7;
     color: var(--ink-soft);
   }
-  .about-text p + p { margin-top: 22px; }
-  .about-text .signature {
-    margin-top: 36px;
-    font-family: 'Italiana', serif;
-    font-size: 18px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
+  .about-text-only p + p { margin-top: 22px; }
+  .about-text-only strong {
+    font-weight: 600;
+    color: var(--ink);
   }
-  .about-text .signature .line {
+  .about-text-only .signature {
+    margin-top: 40px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .about-text-only .signature .line {
     display: inline-block;
     width: 36px; height: 1px;
     background: var(--gold);
-    vertical-align: middle;
-    margin-right: 14px;
   }
-  .about-img-wrap {
-    position: relative;
-    aspect-ratio: 4/5;
-    overflow: hidden;
-    border-radius: 6px;
-  }
-  .about-img-wrap img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
-  @media (max-width: 860px) {
-    .about-grid { grid-template-columns: 1fr; gap: 50px; }
-    .about-text { order: 2; text-align: center; }
-    .about-img-wrap { order: 1; max-width: 380px; margin: 0 auto; }
-    .about-text .signature .line { display: none; }
+  @media (max-width: 480px) {
+    .about-text-only { font-size: 17px; padding: 0 8px; }
+    .about-text-only .signature { font-size: 14px; }
   }
 
   /* ---------- SERVICES ---------- */
@@ -337,19 +355,20 @@
     background: rgba(250, 248, 244, 0.92);
     padding: 6px 14px;
     border-radius: 999px;
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     font-size: 11px;
     letter-spacing: 0.3em;
   }
 
   .service-content { padding: 20px 0; }
   .service-name {
-    font-family: 'Italiana', serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 1;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 4.8vw, 56px);
+    line-height: 1.05;
     margin-bottom: 28px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.005em;
   }
   .service-price-row {
     display: flex;
@@ -363,29 +382,31 @@
     padding: 8px 22px;
     border: 1px solid var(--ink);
     border-radius: 999px;
-    font-family: 'Italiana', serif;
-    font-size: 12px;
-    letter-spacing: 0.3em;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
   }
   .service-price {
-    font-family: 'Italiana', serif;
-    font-size: clamp(38px, 4.5vw, 52px);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4vw, 46px);
     line-height: 1;
   }
   .service-price .currency {
-    font-size: 0.7em;
+    font-size: 0.65em;
     vertical-align: top;
     margin-right: 4px;
     color: var(--gold);
   }
   .service-desc {
     font-style: italic;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--ink-soft);
     max-width: 440px;
     margin-bottom: 32px;
-    line-height: 1.5;
+    line-height: 1.55;
   }
   .service-btn {
     display: inline-flex;
@@ -396,10 +417,11 @@
     color: var(--ink);
     border: 1px solid var(--ink);
     text-decoration: none;
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
     border-radius: 999px;
     transition: all 0.25s ease;
   }
@@ -417,11 +439,17 @@
       padding: 50px 0;
     }
     .service-card .service-image-wrap,
-    .service-card.reverse .service-image-wrap { order: 1; max-width: 420px; margin: 0 auto; }
+    .service-card.reverse .service-image-wrap { order: 1; max-width: 380px; margin: 0 auto; }
     .service-card .service-content,
-    .service-card.reverse .service-content { order: 2; text-align: center; }
+    .service-card.reverse .service-content { order: 2; text-align: center; padding-top: 0; }
     .service-price-row { justify-content: center; }
     .service-desc { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 480px) {
+    .service-card,
+    .service-card.reverse { padding: 40px 0; gap: 28px; }
+    .service-name { font-size: 36px; }
+    .service-desc { font-size: 16px; }
   }
 
   /* ---------- PAYMENTS ---------- */
@@ -465,7 +493,8 @@
   }
   .payment-icon svg { width: 100%; height: 100%; }
   .payment-name {
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     font-size: 22px;
     letter-spacing: 0.05em;
     margin-bottom: 6px;
@@ -473,10 +502,11 @@
   .payment-desc {
     font-style: italic;
     color: var(--muted);
-    font-size: 16px;
+    font-size: 15px;
   }
   @media (max-width: 720px) {
-    .payment-grid { grid-template-columns: 1fr; max-width: 380px; }
+    .payment-grid { grid-template-columns: 1fr; max-width: 380px; gap: 20px; }
+    .payment-card { padding: 38px 24px; }
   }
 
   /* ---------- FOOTER ---------- */
@@ -487,16 +517,20 @@
     text-align: center;
   }
   .footer-title {
-    font-family: 'Italiana', serif;
-    font-size: clamp(36px, 5vw, 56px);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
     margin-bottom: 16px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.01em;
+    padding: 0 16px;
   }
   .footer-sub {
     font-style: italic;
-    font-size: 19px;
+    font-size: 17px;
     color: rgba(250, 248, 244, 0.7);
     margin-bottom: 40px;
+    padding: 0 16px;
   }
   .footer-cta {
     display: inline-flex;
@@ -506,10 +540,11 @@
     background: var(--gold);
     color: var(--ink);
     text-decoration: none;
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 12px;
     border-radius: 999px;
     transition: transform 0.25s ease;
     margin-bottom: 60px;
@@ -527,7 +562,8 @@
     text-align: center;
   }
   .footer-info-label {
-    font-family: 'Italiana', serif;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
     font-size: 11px;
     letter-spacing: 0.4em;
     text-transform: uppercase;
@@ -537,8 +573,8 @@
   .footer-info-value a {
     color: var(--bg);
     text-decoration: none;
-    font-size: 18px;
-    letter-spacing: 0.05em;
+    font-size: 17px;
+    letter-spacing: 0.03em;
     transition: color 0.2s;
   }
   .footer-info-value a:hover { color: var(--gold); }
@@ -550,9 +586,13 @@
     margin: 0 auto 30px;
   }
   .footer-copy {
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(250,248,244,0.5);
     letter-spacing: 0.1em;
+  }
+  @media (max-width: 480px) {
+    .footer { padding: 60px 0 30px; }
+    .footer-info { gap: 30px; }
   }
 
   /* ---------- Floating WhatsApp ---------- */
@@ -665,8 +705,10 @@
         </a>
       </div>
 
-      <div class="hero-image-wrap reveal">
-        <img src="imagens/1.jpeg" alt="Ruthy Peixoto em seu estúdio EYSH">
+      <div class="hero-image reveal">
+        <div class="hero-image-wrap">
+          <img src="imagens/1.jpeg" alt="Ruthy Peixoto em seu estúdio EYSH">
+        </div>
         <div class="hero-badge">
           <span class="dot"></span>
           EYSH Studio
@@ -706,15 +748,11 @@
 
   <div class="container">
     <div class="section-eyebrow reveal">Sobre mim</div>
-    <div class="about-grid">
-      <div class="about-img-wrap reveal">
-        <img src="imagens/1.jpeg" alt="Ruthy Peixoto trabalhando em seu estúdio">
-      </div>
-      <div class="about-text reveal">
-        <p>Sou <strong>Ruthiele</strong>, designer de sobrancelha e lash designer, apaixonada por realçar a beleza natural de cada mulher.</p>
-        <p>Há alguns anos escolhi transformar olhares e ajudar minhas clientes a se sentirem mais confiantes e bonitas. Cada técnica é pensada para combinar com o seu rosto e a sua rotina.</p>
-        <div class="signature"><span class="line"></span>Ruthy Peixoto</div>
-      </div>
+    <h2 class="section-title reveal" style="margin-bottom: 50px;">Ruthiele</h2>
+    <div class="about-text-only reveal">
+      <p>Sou <strong>Ruthiele</strong>, designer de sobrancelha e lash designer, apaixonada por realçar a beleza natural de cada mulher.</p>
+      <p>Há alguns anos escolhi transformar olhares e ajudar minhas clientes a se sentirem mais confiantes e bonitas. Cada técnica é pensada para combinar com o seu rosto e a sua rotina.</p>
+      <div class="signature"><span class="line"></span>Ruthy Peixoto<span class="line"></span></div>
     </div>
   </div>
 </section>
@@ -924,7 +962,7 @@
             <path d="M50 8 L 56 8 L 56 14"/>
             <path d="M14 56 L 8 56 L 8 50"/>
             <path d="M50 56 L 56 56 L 56 50"/>
-            <text x="32" y="38" text-anchor="middle" font-family="Italiana, serif" font-size="14" stroke="none" fill="#0E0E0E" font-weight="600">PIX</text>
+            <text x="32" y="38" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" stroke="none" fill="#0E0E0E" font-weight="700">PIX</text>
           </svg>
         </div>
         <div class="payment-name">Pix</div>
