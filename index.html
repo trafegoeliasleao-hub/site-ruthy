@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="theme-color" content="#FAF8F4">
+<meta name="theme-color" content="#0A0A0A">
 <title>Ruthy Peixoto | Cílios e Sobrancelhas</title>
 <meta name="description" content="Designer de cílios e sobrancelhas. Realce sua beleza natural com técnicas exclusivas: Fio a Fio, Brasileiro, Americano, Egípcio, Efeito Fox, Design e Henna.">
 
@@ -13,15 +13,15 @@
 
 <style>
   :root {
-    --bg: #FAF8F4;
-    --bg-soft: #F2EDE3;
-    --ink: #0E0E0E;
-    --ink-soft: #2A2A2A;
-    --muted: #6B655C;
+    --bg: #0A0A0A;
+    --bg-soft: #141414;
+    --ink: #F3EEE3;
+    --ink-soft: #D9D2C2;
+    --muted: #9C9382;
     --gold: #C9A84C;
     --gold-soft: #E4CE94;
     --gold-pale: #F5E9C8;
-    --line: rgba(14,14,14,0.12);
+    --line: rgba(243,238,227,0.12);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,7 +68,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(250, 248, 244, 0.92);
+    background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
@@ -168,7 +168,7 @@
   .hero-cta:hover {
     transform: translateY(-2px);
     background: var(--gold);
-    color: var(--ink);
+    color: #0E0E0E;
   }
   .hero-cta svg { width: 16px; height: 16px; }
 
@@ -180,7 +180,7 @@
     aspect-ratio: 4 / 5;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.25);
+    box-shadow: 0 30px 80px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(243,238,227,0.06);
   }
   .hero-image-wrap img {
     width: 100%;
@@ -202,7 +202,7 @@
     background: var(--bg);
     padding: 14px 22px;
     border-radius: 999px;
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), 0 0 0 1px rgba(243,238,227,0.05);
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 500;
     font-size: 12px;
@@ -324,7 +324,7 @@
 
   /* ---------- SERVICES ---------- */
   .services {
-    background: linear-gradient(180deg, var(--bg) 0%, #F6F1E8 100%);
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
     overflow: hidden;
   }
   .services .swirl-side {
@@ -350,7 +350,7 @@
     aspect-ratio: 4/5;
     overflow: hidden;
     border-radius: 4px;
-    box-shadow: 0 25px 60px -25px rgba(0,0,0,0.22);
+    box-shadow: 0 25px 60px -25px rgba(0,0,0,0.7), 0 0 0 1px rgba(243,238,227,0.05);
   }
   .service-image-wrap img {
     width: 100%; height: 100%; object-fit: cover;
@@ -362,7 +362,7 @@
   .service-number {
     position: absolute;
     top: 18px; left: 18px;
-    background: rgba(250, 248, 244, 0.92);
+    background: rgba(10, 10, 10, 0.85);
     padding: 6px 14px;
     border-radius: 999px;
     font-family: 'Cormorant Garamond', Georgia, serif;
@@ -561,8 +561,9 @@
 
   /* ---------- FOOTER ---------- */
   .footer {
-    background: var(--ink);
-    color: var(--bg);
+    background: #050505;
+    color: var(--ink);
+    border-top: 1px solid var(--line);
     padding: 80px 0 40px;
     text-align: center;
   }
@@ -588,7 +589,7 @@
     gap: 12px;
     padding: 16px 36px;
     background: var(--gold);
-    color: var(--ink);
+    color: #0E0E0E;
     text-decoration: none;
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 500;
@@ -621,7 +622,7 @@
     margin-bottom: 8px;
   }
   .footer-info-value a {
-    color: var(--bg);
+    color: var(--ink);
     text-decoration: none;
     font-size: 17px;
     letter-spacing: 0.03em;
